@@ -68,3 +68,19 @@ RV 1
     ORDER BY Population desc
     LIMiT 2
     OFFSET 2
+
+EX 6
+1.  SELECT Title, Domestic_sales,   International_sales
+    FROM movies
+    INNER JOIN Boxoffice
+        ON Movies.Id = Boxoffice.Movie_id
+2. SELECT Title, Domestic_sales, International_sales
+    FROM movies
+    INNER JOIN Boxoffice
+        ON Movies.Id = Boxoffice.Movie_id
+    WHERE International_sales >     Domestic_sales
+3.  SELECT *
+    FROM movies
+    INNER JOIN Boxoffice
+        ON Movies.Id = Boxoffice.Movie_id
+    ORDER BY Rating DESC
