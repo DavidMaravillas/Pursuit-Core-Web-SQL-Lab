@@ -84,3 +84,76 @@ EX 6
     INNER JOIN Boxoffice
         ON Movies.Id = Boxoffice.Movie_id
     ORDER BY Rating DESC
+
+EX 7
+1.  SELECT DISTINCT Building 
+    FROM Employees
+    LEFT JOIN Buildings
+    ON Building_name = Building
+2.  SELECT DISTINCT Capacity,   Building_name
+    FROM Buildings
+    LEFT JOIN Employees
+    ON Buildings.Building_name =        Employees.Building
+3. SELECT DISTINCT Building_name,       Role
+    FROM Buildings
+    LEFT JOIN Employees
+        ON Buildings.Building_name = Employees.Building
+
+EX 8
+1.  SELECT DISTINCT Name, Role 
+    FROM employees
+    WHERE Building IS NUll
+2.  SELECT DISTINCT Building_name 
+    FROM Buildings
+    LEFT JOIN Employees 
+        ON Building_name = Building
+    WHERE Building IS NUll
+
+EX. 9
+1. SELECT Title, (Domestic_sales+International_sales)/1000000 
+    AS Sales_Millions
+FROM movies
+INNER JOIN Boxoffice
+    on Movies.Id = Boxoffice.Movie_id
+2. SELECT Title, Rating*10
+    AS Ratings_Percent
+FROM movies
+INNER JOIN Boxoffice
+    on Movies.Id = Boxoffice.Movie_id
+3. SELECT *
+FROM movies
+INNER JOIN Boxoffice
+    on Movies.Id = Boxoffice.Movie_id
+WHERE Year%2 = 0
+
+EX 10
+1. SELECT MAX(Years_employed) FROM employees
+2.  SELECT Role, AVG(Years_employed)
+    FROM employees
+    GROUP BY role
+3. SELECT BUIlding, SUM(Years_employed) FROM employees
+GROUp BY BUIlding
+
+
+EX 11
+1. SELECT Sum(role="Artist") AS         Num_of_Artist
+    FROM employees; 
+
+2.  SELECT Role, count(role)FROM            employees
+    GROUP by Role
+
+3.  SELECT role, SUM(Years_employed)
+    FROM employees
+    WHERE ROle = "Engineer"
+
+EX. 12
+1. SELECT Director, count(Director) FROM movies
+GROUP By Director
+2. SELECT director, sum(Domestic_sales+International_sales)FROM movies
+INNER JOIn Boxoffice
+    on Boxoffice.Movie_id = Movies.Id
+GROUP BY director
+
+EX 13
+1. INSERT INTO Movies
+Values (4, "TOY STORY 4", "John Lasseter", 2019, 90)
