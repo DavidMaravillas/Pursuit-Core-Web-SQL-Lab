@@ -157,3 +157,48 @@ GROUP BY director
 EX 13
 1. INSERT INTO Movies
 Values (4, "TOY STORY 4", "John Lasseter", 2019, 90)
+2. INSERT INTO Boxoffice
+values (4,8.7,340000000,270000000)
+
+EX 14
+1. 
+UPDATE Movies
+SET Director = "John Lasseter" 
+WHERE Title = "A Bug's Life" ;
+2.
+UPDATE Movies
+SET Year = 1999
+WHERE Title = "Toy Story 2" ;
+3.
+UPDATE Movies
+SET title = "Toy Story 2", Director = "Lee Unkrich"
+WHERE Id = 11
+
+EX 15
+1. 
+DELETE FROM Movies
+WHERE Year <= 2005;
+2.
+DELETE FROM Movies
+WHERE Director = "Andrew Stanton";
+
+EX 16
+1.
+CREATE TABLE Database (
+    Name TEXT,
+    Version FLOAT,
+    Download_count INTEGER
+);
+
+EX 17
+1.
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT;
+2.
+ALTER TABLE Movies
+ADD Language TEXT
+    DEFAULT "English";
+EX 18
+1. DROP TABLE IF EXISTS Movies
+
+2. DROP TABLE IF EXISTS Boxoffice;
